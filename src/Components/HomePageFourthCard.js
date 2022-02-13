@@ -2,16 +2,16 @@ import React from 'react'
 import { Button } from '../Styles/Button.styled'
 import { HomePageCard, HomePageCenterBox, InputDiv } from '../Styles/HomePage.styled'
 
-const HomePageThirdCard = () => {
+const HomePageFourthCard = () => {
 	return (
 		<HomePageCard>
-			<h3>Change Phone number</h3>
-			<p> Phone no. currently registered (+998 93 497 11-38) Available services: EXAMS; HELP DASK; ELECTIONS;</p>
+			<h3>Forward</h3>
+			<p>TDAU is not responsible for any lost message due to the activation of the forwarding service. Valid messages are those stored in the server with domain: student@tdau.uz Make sure you regularly delete the messages stored on this server.</p>
 			<HomePageCenterBox>
 				<div>
-					<p>New phone number:</p>
+					<p>Forwarding e-mail address:</p>
 					<InputDiv>
-						<input type="phone" placeholder="Eg. your phone number here" />
+						<input type="email" required placeholder="Eg. your e-mail here" />
 					</InputDiv>
 					<div style={{ display: 'flex', alignItems: 'center' }}>
 						<p>
@@ -27,4 +27,4 @@ const HomePageThirdCard = () => {
 	)
 }
 
-export default HomePageThirdCard
+export default HomePageFourthCard

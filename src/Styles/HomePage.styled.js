@@ -5,9 +5,9 @@ export const InnerHomePage = styled.div`
 	grid-template-columns: 1fr 1fr;
 	margin-top: 93px;
 	grid-gap: 30px;
-    @media(max-width: 900px) {
-        grid-template-columns: 1fr;
-  }
+	@media (max-width: 900px) {
+		grid-template-columns: 1fr;
+	}
 `
 
 export const HomePageCard = styled.div`
@@ -99,7 +99,7 @@ export const ContentBox = styled.div`
 	}
 `
 
-export const HomePageCenterBox = styled.div`
+export const HomePageCenterBox = styled.form`
 	margin: auto 0;
 	padding: 20px 0;
 	width: 100%;
@@ -109,9 +109,17 @@ export const HomePageCenterBox = styled.div`
 		margin-bottom: 10px;
 	}
 
-    & div{
-        margin-bottom: 20px;
-    }
+	& div {
+		margin-bottom: 20px;
+
+		& p input {
+			width: 9.59px;
+			height: 9.59px;
+			margin-left: 10px;
+			background: #ffffff;
+			border: 1.06532px solid #e5e5e5;
+		}
+	}
 `
 
 export const InputDiv = styled.div`
