@@ -21,7 +21,7 @@ export const NavLogo = styled(Link)`
 	font-weight: 800;
 	font-size: 48px;
 	line-height: 59px;
-	color: #193325;
+	color: ${({color}) => color ? color : '#193325'};
 	text-transform: uppercase;
 `
 

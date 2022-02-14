@@ -4,7 +4,7 @@ import photoIcons from '../Assets/photo-icon.svg'
 import editIcon from '../Assets/pencil-icon.svg'
 import { AvatarCard, ContentBox, HomePageCard, IconCircle, InfoCard } from '../Styles/HomePage.styled'
 
-const HomePageFirstCard = () => {
+const HomePageFirstCard = ({data}) => {
 	return (
 		<HomePageCard>
 			<InfoCard>
@@ -14,13 +14,13 @@ const HomePageFirstCard = () => {
 				</AvatarCard>
 				<div>
 					<div>
-						<h3>Name Surname</h3>
+						<h3>{data.name} {data.surname}</h3>
 						<img src={editIcon} alt="" />
 					</div>
 					<p>
-						272610<br></br>
+						{data.id}<br></br>
 						Bachelor of science program in
-						<b> ENGINEERING AND MANAGEMENT</b>
+						<b> {data.faculty_name}</b>
 					</p>
 				</div>
 			</InfoCard>

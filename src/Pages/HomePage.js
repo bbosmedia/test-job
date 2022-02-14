@@ -1,20 +1,44 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container } from '../Styles/Container.styled'
-import { HomePageCard, InnerHomePage, InputDiv } from '../Styles/HomePage.styled'
+import {InnerHomePage, } from '../Styles/HomePage.styled'
 
 import HomePageSecondCard from '../Components/HomePageSecondCard'
 import HomePageFirstCard from '../Components/HomePageFirstCard'
 import HomePageThirdCard from '../Components/HomePageThirdCard'
 import HomePageFourthCard from '../Components/HomePageFourthCard'
+import axios from 'axios'
+import { mainUrl } from '../consts'
+import { useSelector } from 'react-redux'
+import { selectToken } from '../Redux/siteSlice'
+import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs'
 
 const HomePage = () => {
+	const [data, setData] = useState(null)
+	const breadcrumbs = useReactRouterBreadcrumbs()
+	const accesstoken = useSelector(selectToken)
+
+	const getData = async() =>{
+		const response = await axios.get(mainUrl + 'user', {headers: {'x-access-token': accesstoken, }})
+		if(response.status === 200){
+			console.log(response.data)
+			setData(response.data);
+		}else{
+			console.log(response.data)
+		}
+	}
+
+	useEffect(()=>{
+		setTimeout(()=>{
+			getData();
+		},1000)
+	},[breadcrumbs])
 	return (
 		<>
 			<Container style={{ marginBottom: '50px' }}>
 				<InnerHomePage>
-					<HomePageFirstCard></HomePageFirstCard>
+					{data && <HomePageFirstCard data={data} />}
 					<HomePageSecondCard />
-					<HomePageThirdCard />
+					{data && <HomePageThirdCard phonea={data.phone} />}
 					<HomePageFourthCard />
 				</InnerHomePage>
 			</Container>

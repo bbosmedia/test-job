@@ -147,7 +147,19 @@ export const InputDiv = styled.div`
 			line-height: 21px;
 		}
 	}
+
+	& select {
+		flex: 1;
+		width: 100%;
+		border: none;
+		outline: none;
+		padding: 0 20px;
+		font-size: 14px;
+		margin-right: 5px;
+		font-family: 'Monsterrat', sans-serif;
+	}
 	& img {
 		margin-right: 10px;
+		height: 25px;
 	}
 `
