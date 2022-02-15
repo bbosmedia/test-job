@@ -20,7 +20,6 @@ const HomePage = () => {
 	const getData = async() =>{
 		const response = await axios.get(mainUrl + 'user', {headers: {'x-access-token': accesstoken, }})
 		if(response.status === 200){
-			console.log(response.data)
 			setData(response.data);
 		}else{
 			console.log(response.data)
@@ -39,7 +38,7 @@ const HomePage = () => {
 					{data && <HomePageFirstCard data={data} />}
 					<HomePageSecondCard />
 					{data && <HomePageThirdCard phonea={data.phone} />}
-					<HomePageFourthCard />
+					{data && <HomePageFourthCard emaila={data.email} />}
 				</InnerHomePage>
 			</Container>
 		</>

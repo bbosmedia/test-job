@@ -6,7 +6,7 @@ import { selectToken } from '../Redux/siteSlice'
 import { Button } from '../Styles/Button.styled'
 import { HomePageCard, HomePageCenterBox, InputDiv } from '../Styles/HomePage.styled'
 
-const HomePageFourthCard = () => {
+const HomePageFourthCard = ({emaila}) => {
 	const [email, setEmail] = useState('')
 	const accesstoken = useSelector(selectToken);
 	const changePhone = async (e) => {
@@ -29,7 +29,7 @@ const HomePageFourthCard = () => {
 	return (
 		<HomePageCard>
 			<h3>Forward</h3>
-			<p>TDAU is not responsible for any lost message due to the activation of the forwarding service. Valid messages are those stored in the server with domain: student@tdau.uz Make sure you regularly delete the messages stored on this server.</p>
+			<p>TDAU is not responsible for any lost message due to the activation of the forwarding service. Valid messages are those stored in the server with domain: {emaila} Make sure you regularly delete the messages stored on this server.</p>
 			<HomePageCenterBox onSubmit={changePhone}>
 				<div>
 					<p>Forwarding e-mail address:</p>
