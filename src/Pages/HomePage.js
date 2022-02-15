@@ -36,7 +36,7 @@ const HomePage = () => {
 			<Container style={{ marginBottom: '50px' }}>
 				<InnerHomePage>
 					{data && <HomePageFirstCard data={data} />}
-					<HomePageSecondCard />
+					{data && <HomePageSecondCard />}
 					{data && <HomePageThirdCard phonea={data.phone} />}
 					{data && <HomePageFourthCard emaila={data.email} />}
 				</InnerHomePage>

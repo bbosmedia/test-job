@@ -52,9 +52,8 @@ const HomePageSecondCard = () => {
 				if (response.data.msg === 'success') {
 					toast.success('Password Changed Successfully', { position: 'bottom-right', autoClose: 3000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined })
 
-					setPasswords({old_password: '',
-					new_password: '',
-					repeat_password: '',})
+					setPasswords({ old_password: '', new_password: '', repeat_password: '' })
+					setPasswordTypes({ first: true, second: true, third: true })
 				} else {
 					toast.error(response.data.msg, { position: 'bottom-right', autoClose: 3000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined })
 				}
@@ -71,21 +70,21 @@ const HomePageSecondCard = () => {
 				<div>
 					<p>Currently pasword:</p>
 					<InputDiv>
-						<input onChange={update} name="old_password" type={passwordTypes.first ? 'password' : 'text'} placeholder="Eg. your pasword here" />
+						<input value={passwords.old_password} onChange={update} name="old_password" type={passwordTypes.first ? 'password' : 'text'} placeholder="Eg. your pasword here" />
 						<img onClick={() => setPasswordTypes({ ...passwordTypes, first: !passwordTypes.first })} src={passwordTypes.first ? eyeOpen : eyeClose} alt="" />
 					</InputDiv>
 				</div>
 				<div>
 					<p>New pasword:</p>
 					<InputDiv>
-						<input onChange={update} name="new_password" type={passwordTypes.second ? 'password' : 'text'} placeholder="Eg. your pasword here" />
+						<input value={passwords.new_password} onChange={update} name="new_password" type={passwordTypes.second ? 'password' : 'text'} placeholder="Eg. your pasword here" />
 						<img onClick={() => setPasswordTypes({ ...passwordTypes, second: !passwordTypes.second })} src={passwordTypes.second ? eyeOpen : eyeClose} alt="" />
 					</InputDiv>
 				</div>
 				<div>
 					<p>Confirm pasword:</p>
 					<InputDiv>
-						<input onChange={update} name="repeat_password" type={passwordTypes.third ? 'password' : 'text'} placeholder="Eg. your pasword here" />
+						<input value={passwords.repeat_password} onChange={update} name="repeat_password" type={passwordTypes.third ? 'password' : 'text'} placeholder="Eg. your pasword here" />
 						<img onClick={() => setPasswordTypes({ ...passwordTypes, third: !passwordTypes.third })} src={passwordTypes.third ? eyeOpen : eyeClose} alt="" />
 					</InputDiv>
 				</div>
